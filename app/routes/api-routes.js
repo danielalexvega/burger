@@ -13,16 +13,16 @@ module.exports = (app) => {
             routeName: req.body.routeName,
             burgerName: req.body.burgerName,
             devoured: false
-        }).then(resules => {
+        }).then(results => {
             res.end;
         });
     });
 
     app.put('/api/:routeName', (req, res, next) => {
-        console.log(req.params.routeName);
+        console.log(req.body + 'RIGHT HERE');
         Burger.update(
             {devoured: true},
-            {returning: true, where: {routeName: req.params.routeName}}
+            {where: {routeName: req.params.routeName}}
         ).then((rowsUpdated) => {
             res.json(rowsUpdated)
         }).catch(next)

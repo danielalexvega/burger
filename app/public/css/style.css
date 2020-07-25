@@ -1,0 +1,38 @@
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Overpass', sans-serif;
+font-family: 'Rock Salt', cursive;
+font-family: 'Sedgwick Ave Display', cursive;
+font-family: 'Special Elite', cursive; */
+
+@font-face{
+    font-family: 'Hand Crafted';
+    src: url('./HandCrafted-axy0a.ttf');
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.custom-jumobotron {
+    font-family: 'Hand Crafted', cursive;
+    font-size:82px;
+    padding: 10px;
+    margin-bottom: 16px;
+}
+
+.header{
+    font-size:72px;
+}
+
+#burger-submit{
+    font-size: 16px;
+    margin: 8px;
+}
+
+.burger {
+    margin:8px;
+}
+
+.burgerName {
+    margin-right:8px;
+}
