@@ -29,14 +29,14 @@ $('#burger-submit').on('click', (event) => {
 
 $('#burger-area').on('click', (event) => {
     event.preventDefault();
-    if(event.target.type === 'submit'){
+    if (event.target.type === 'submit') {
         let routeName = event.target.id.replace(/\s+/g, '').toLowerCase();
         console.log(routeName);
 
         $.ajax({
             url: `/api/${routeName}`,
-            type:'PUT',
-            data: {name: routeName},
+            type: 'PUT',
+            data: { name: routeName },
             success: (data) => {
                 location.assign('/');
             }
@@ -58,7 +58,27 @@ $.get('/api/all', (data) => {
                 $('#burger-area').prepend(row);
             }
             else {
+                let deleteBtn = $('<button>').attr({ class: 'btn deleteBtn', id: burger.burgerName });
+                deleteBtn.text('Delete');
+                row.append(deleteBtn);
                 $('#devoured-area').prepend(row);
+            }
+        });
+    }
+});
+
+$('#devoured-area').on('click', (event) => {
+    event.preventDefault();
+
+    if (event.target.type === 'submit') {
+        let routeName = event.target.id.replace(/\s+/g, '').toLowerCase();
+        console.log(routeName);
+
+        $.ajax({
+            url: `/api/${routeName}`,
+            type: 'DELETE',
+            success: (data) => {
+                location.assign('/');
             }
         });
     }

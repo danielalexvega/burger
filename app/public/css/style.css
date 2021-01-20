@@ -11,22 +11,40 @@ font-family: 'Special Elite', cursive; */
 
 body {
     font-family: 'Montserrat', sans-serif;
+    background: #F2A900;
+    color: #111519
 }
 
 .custom-jumobotron {
     font-family: 'Hand Crafted', cursive;
-    font-size:82px;
     padding: 10px;
     margin-bottom: 16px;
+    height: 140px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background: #DA291C;
+    color:#FEFEED;
 }
 
 .header{
-    font-size:72px;
+    font-size:82px;
 }
 
 #burger-submit{
     font-size: 16px;
     margin: 8px;
+    background: #DA291C;
+    color:#FEFEED
+}
+
+#burger-submit:hover {
+    background:#C71609;
+}
+
+.burger-title h2{
+    font-size: 40px;
+    font-weight: bolder;
 }
 
 .burger {
@@ -35,4 +53,30 @@ body {
 
 .burgerName {
     margin-right:8px;
+}
+
+.burger-container {
+    width: 60%;
+}
+
+p {
+    margin: 0px;
+}
+
+.burger-input-container {
+    margin-bottom: 2rem;
+}
+
+.burger-input-text {
+    margin: 8px 0;
+}
+
+.burger-input-text input {
+    display: inline;
+    width: 80%;
+}
+
+.devourBtn, .deleteBtn {
+    background-color: #0033A0;
+    color:#FEFEED;
 }

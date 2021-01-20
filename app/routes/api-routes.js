@@ -21,8 +21,17 @@ module.exports = (app) => {
     app.put('/api/:routeName', (req, res, next) => {
         console.log(req.body + 'RIGHT HERE');
         Burger.update(
-            {devoured: true},
-            {where: {routeName: req.params.routeName}}
+            { devoured: true },
+            { where: { routeName: req.params.routeName } }
+        ).then((rowsUpdated) => {
+            res.json(rowsUpdated)
+        }).catch(next)
+    });
+
+    app.delete('/api/:routeName', (req, res, next) => {
+        console.log(req.body + 'RIGHT HERE');
+        Burger.destroy(
+            { where: { routeName: req.params.routeName } }
         ).then((rowsUpdated) => {
             res.json(rowsUpdated)
         }).catch(next)
